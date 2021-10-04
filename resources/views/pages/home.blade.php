@@ -9,8 +9,9 @@
 @section('content')
     <section class="h-screen bg-hero-pattern bg-center bg-cover flex items-center justify-center" id="hero">
         <div class="text-center px-4">
-            <h1 class="text-white text-2xl font-light uppercase tracking-widest mb-4">Nux Blog</h1>
-            <h2 class="text-xs text-white font-semibold uppercase tracking-wide opacity-70">Lorem ipsum dolor, sit
+            <h1 class="text-white text-2xl font-light uppercase tracking-widest mb-4 md:text-5xl">Nux Blog</h1>
+            <h2 class="text-xs text-white font-semibold uppercase tracking-wide opacity-70 md:text-base">Lorem ipsum dolor,
+                sit
                 amet
                 consectetur
                 adipisicing elit. Dicta, dignissimos.</h2>

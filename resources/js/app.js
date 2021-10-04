@@ -11,7 +11,5 @@ burger.addEventListener("click", (e) => {
 
     burger.classList.toggle("nav-is-open");
     burger.classList.toggle("no-hover");
-
-    navMobile.classList.toggle("nav-mobile-hidden");
-    navMobile.classList.toggle("nav-mobile-active");
+    navMobile.classList.toggle("hidden");
 });
