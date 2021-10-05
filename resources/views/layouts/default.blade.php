@@ -10,6 +10,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
     @yield('extra-css')
 
     <!-- Scripts -->
@@ -18,7 +19,7 @@
 
 <body class="antialiased text-dark">
     @include('includes.header')
-    <main class="min-h-screen">
+    <main class="min-h-screen" id="main">
         @yield('content')
     </main>
     @include('includes.footer')

@@ -20,16 +20,43 @@
                     aria-label="Link to about page">About</a>
                 <a class="relative flex items-center h-full px-2 nav-link" href="#"
                     aria-label="link to contact page">Contact</a>
+                @guest
+                    <a class="relative flex items-center h-full px-2 nav-link" href="{{ route('login') }}"
+                        aria-label="link to login page">
+                        Login
+                    </a>
+                @endguest
+                @auth
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="submit" class="relative flex items-center h-full px-2 uppercase nav-link"
+                            aria-label="logout of session">
+                            Logout
+                        </button>
+                    </form>
+                @endauth
             </div>
         </nav>
     </div>
     {{-- Nav Mobile --}}
     <nav class="w-full nav-mobile hidden pb-4" id="navMobile" aria-label="Navigation Links">
         <div class="space-y-4 uppercase tracking-widest" id="navList">
-            <a class="block pl-4" href="#" aria-label="Link to homepage">Home</a>
+            <a class="block pl-4" href="{{ route('home') }}" aria-label="Link to homepage">Home</a>
             <a class="block pl-4" href="#" aria-label="Link to blog page">Blog</a>
             <a class="block pl-4" href="#" aria-label="Link to about page">About</a>
             <a class="block pl-4" href="#" aria-label="Link to contact page">Contact</a>
+            @guest
+                <a class="block pl-4" href="{{ route('login') }}" aria-label="Link to login page">Login</a>
+            @endguest
+            @auth
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="relative flex items-center h-full px-2 uppercase nav-link"
+                        aria-label="logout of session">
+                        Logout
+                    </button>
+                </form>
+            @endauth
         </div>
     </nav>
 </header>
