@@ -34,7 +34,7 @@
     content: "";
     display: block;
     height: 0.562em;
-    background-color: #000;
+    background-color: #333;
 
     transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
     transform-origin: right;
@@ -43,7 +43,7 @@
 .burger-transform .burger__inner::after,
 .burger-transform .burger__inner::before,
 .burger-transform .burger__inner span {
-    background-color: #000;
+    background-color: #333;
 }
 
 .burger__inner::before {
@@ -93,7 +93,7 @@
     bottom: 0;
     height: 5px;
     width: 100%;
-    background-color: #000;
+    background-color: #823eb7;
 
     transform-origin: left;
     transition: all 0.125s ease;
@@ -105,5 +105,5 @@
 }
 
 .nav-link:hover {
-    font-weight: 700;
+    color: #823eb7;
 }
