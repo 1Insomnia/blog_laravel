@@ -609,6 +609,23 @@ video {
   }
 }
 
+.btn-accent {
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgba(130, 62, 183, var(--tw-bg-opacity));
+  padding: 0.5rem;
+  padding-right: 1.25rem;
+  padding-left: 1.25rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+
+.btn-accent:hover {
+  opacity: 0.8;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
