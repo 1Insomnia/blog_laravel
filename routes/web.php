@@ -11,6 +11,9 @@ Route::get('/dashboard', function () {
 
 Route::get('/', HomePageController::class)->name('home');
 
-Route::resource('/blog', PostController::class);
+Route::get('/blog', [PostController::class, 'index'])->name('post.index');
+Route::get('/blog/create', [PostController::class, 'create'])->name('post.create');
+Route::post('/blog/store', [PostController::class, 'store'])->name('post.store');
+// Route::group(['middleware' => ['can:post_create']], function () {});
 
 require __DIR__.'/auth.php';

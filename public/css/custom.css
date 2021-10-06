@@ -1,0 +1,113 @@
+#main {
+    padding-top: 71px;
+}
+
+#header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+#header > div {
+    height: 71px;
+}
+
+.burger {
+    font-size: 8px;
+    outline: none;
+    z-index: 100;
+    padding: 1rem;
+}
+
+.burger__inner {
+    display: block;
+    width: 4.3em;
+    height: 2.8em;
+}
+
+.burger__inner span {
+    margin: 0.562em 0;
+}
+
+/* Styling burger lines */
+.burger__inner::after,
+.burger__inner::before,
+.burger__inner span {
+    content: "";
+    display: block;
+    height: 0.562em;
+    background-color: #333;
+
+    transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform-origin: right;
+}
+
+.burger-transform .burger__inner::after,
+.burger-transform .burger__inner::before,
+.burger-transform .burger__inner span {
+    background-color: #333;
+}
+
+.burger__inner::before {
+    transform: scaleX(0.85);
+}
+
+.burger__inner::after {
+    transform: scaleX(0.7);
+}
+
+.burger:not(.no-hover):hover .burger__inner > span {
+    transform-origin: center;
+    transform: scaleX(0.7);
+}
+
+.burger:not(.no-hover):hover .burger__inner::before {
+    transform: scaleX(1);
+}
+
+.burger:not(.no-hover):hover .burger__inner::after {
+    transform: scaleX(1);
+}
+
+.burger__inner > span:hover {
+    transform: scaleX(0.5);
+}
+
+/* When nav-is-open is toggle */
+.nav-is-open .burger__inner > span {
+    transform: scaleX(0);
+}
+
+.nav-is-open .burger__inner::before {
+    transform-origin: center;
+    transform: scaleX(1) translateY(1.124em) rotate(-45deg);
+}
+
+.nav-is-open .burger__inner::after {
+    transform-origin: center;
+    transform: scaleX(1) translateY(-1.124em) rotate(45deg);
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 5px;
+    width: 100%;
+    background-color: #823eb7;
+
+    transform-origin: left;
+    transition: all 0.125s ease;
+    transform: scaleX(0);
+}
+
+.nav-link:hover.nav-link::after {
+    transform: scaleX(1);
+}
+
+.nav-link:hover {
+    color: #823eb7;
+}

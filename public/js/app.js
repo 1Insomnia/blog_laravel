@@ -25932,6 +25932,14 @@ var editor = new _toast_ui_editor__WEBPACK_IMPORTED_MODULE_0__["default"]({
   initialEditType: "markdown",
   placeholder: "Write your blog post..."
 });
+var createPostBtn = document.querySelector("#createPost");
+var bodyInput = document.querySelector("#bodyInput");
+createPostBtn.addEventListener("click", function () {
+  e.preventDefault();
+  var postContent = editor.getMarkdown();
+  bodyInput.value = postContent;
+  e.target.submit();
+});
 
 /***/ }),
 

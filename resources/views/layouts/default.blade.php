@@ -15,6 +15,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    @stack('extra-javascript')
 </head>
 
 <body class="antialiased text-dark">

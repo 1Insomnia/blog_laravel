@@ -14,7 +14,7 @@
             <div class="flex uppercase tracking-widest h-full" id="navList">
                 <a class="relative flex items-center h-full px-2 nav-link" href="{{ route('home') }}"
                     aria-label="Link to homepage">Home</a>
-                <a class="relative flex items-center h-full px-2 nav-link" href="{{ route('blog.index') }}"
+                <a class="relative flex items-center h-full px-2 nav-link" href="{{ route('post.index') }}"
                     aria-label="Link to blog page">Blog</a>
                 <a class="relative flex items-center h-full px-2 nav-link" href="#"
                     aria-label="Link to about page">About</a>
@@ -42,7 +42,7 @@
     <nav class="w-full nav-mobile hidden pb-4" id="navMobile" aria-label="Navigation links mobile">
         <div class="space-y-4 uppercase tracking-widest" id="navList">
             <a class="block pl-4" href="{{ route('home') }}" aria-label="Link to homepage">Home</a>
-            <a class="block pl-4" href="{{ route('blog.index') }}" aria-label="Link to blog page">Blog</a>
+            <a class="block pl-4" href="{{ route('post.index') }}" aria-label="Link to blog page">Blog</a>
             <a class="block pl-4" href="#" aria-label="Link to about page">About</a>
             <a class="block pl-4" href="#" aria-label="Link to contact page">Contact</a>
             @guest
