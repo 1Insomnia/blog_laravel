@@ -24,11 +24,11 @@
                         required autofocus value="{{ old('title') }}" />
 
                     {{-- Category --}}
-                    <label for="category" class="block mt-4 text-xs font-semibold uppercase md:text-base lg:text-lg">
+                    <label for="categoryId" class="block mt-4 text-xs font-semibold uppercase md:text-base lg:text-lg">
                         Category
                     </label>
-                    <select class="mt-4 outline-none w-full block p-3 bg-gray-200 text-gray-700" name="category"
-                        id="category">
+                    <select class="mt-4 outline-none w-full block p-3 bg-gray-200 text-gray-700" name="category_id"
+                        id="categoryId">
                         <option class="outline-none w-full block p-3" selected>Select category</option>
                         @foreach ($categories as $category)
                             <option class="p-3" value="{{ $category->id }}">{{ $category->name }}</option>

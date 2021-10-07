@@ -6,6 +6,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class PostController extends Controller
 {
@@ -16,8 +17,13 @@ class PostController extends Controller
      */
     public function index()
     {
+        $categories = Category::all();
         $posts = Post::orderBy('published_at', 'DESC')->get();
-        return view('pages.blog.index')->with(['posts' => $posts]);
+
+        return view('pages.blog.index')->with([
+            'posts' => $posts,
+            'categories' => $categories
+            ]);
     }
 
     /**
@@ -47,26 +53,25 @@ class PostController extends Controller
             'description' => 'required|string',
             'body' => 'required|string',
             'status' => 'required|integer',
-            'image_path' => 'nullable|string|max:255',
-            'user_id' => 'required|integer',
+            'image' => 'nullable|image|max:4096',
             'category_id' => 'required|integer',
-            'published_at' => 'required|date',
         ];
 
-        dd($request->body);
-
-        // $request->validate($rules);
+        $request->validate($rules);
 
         // Post::create([
         //     'title' => $request->title,
+        //     'slug' => Str::slug($request->title , '-'),
         //     'description' => $request->description,
         //     'body' => $request->body,
         //     'status' => $request->status,
         //     'image_path' => $request->image_path,
         //     'user_id' => auth()->user()->id,
         //     'category_id' => $request->category_id,
-        //     'published_at' => $request->published_at,
+        //     'published_at' => Carbon::now()->toDateTimeString(),
         // ]);
+
+        // return redirect()->route('post.index')->with('message', "Post {$request->title} created");
     }
 
     /**
