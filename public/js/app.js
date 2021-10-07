@@ -25915,8 +25915,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
- // require('alpinejs');
-// Burger Menu : Mobile - Tablet
+ // Burger Menu : Mobile - Tablet
 
 var burger = document.querySelector("#burger");
 var navMobile = document.querySelector("#navMobile");
@@ -25931,14 +25930,13 @@ var editor = new _toast_ui_editor__WEBPACK_IMPORTED_MODULE_0__["default"]({
   height: "500px",
   initialEditType: "markdown",
   placeholder: "Write your blog post..."
-});
-var createPostBtn = document.querySelector("#createPost");
+}); // Handle Post Body Input
+
+var createPostBtn = document.querySelector("#createPostBtn");
 var bodyInput = document.querySelector("#bodyInput");
-createPostBtn.addEventListener("click", function () {
-  e.preventDefault();
+createPostBtn.addEventListener("click", function (e) {
   var postContent = editor.getMarkdown();
   bodyInput.value = postContent;
-  e.target.submit();
 });
 
 /***/ }),

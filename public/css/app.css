@@ -610,20 +610,32 @@ video {
 }
 
 .btn-accent {
-  border-radius: 0.5rem;
   --tw-bg-opacity: 1;
   background-color: rgba(130, 62, 183, var(--tw-bg-opacity));
-  padding: 0.5rem;
-  padding-right: 1.25rem;
-  padding-left: 1.25rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
   font-size: 1.125rem;
   line-height: 1.75rem;
+  font-weight: 300;
+  text-transform: uppercase;
   --tw-text-opacity: 1;
   color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
 
 .btn-accent:hover {
   opacity: 0.8;
+}
+
+.btn-accent {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
 .sr-only {

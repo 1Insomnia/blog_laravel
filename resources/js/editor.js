@@ -1,0 +1,3 @@
+function handleCreatePost() {}
+
+export { handleCreatePost };

@@ -28,6 +28,7 @@ class PostController extends Controller
     public function create()
     {
         $categories = Category::all();
+
         return view('pages.blog.create')
             ->with(['categories' => $categories]);
     }
@@ -40,15 +41,32 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+
         $rules = [
-            'title' => 'required|max:255',
-            'description' => 'required',
-            'status' => 'number|required',
-            'body' => 'required',
-            'category' => 'number|required',
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'body' => 'required|string',
+            'status' => 'required|integer',
+            'image_path' => 'nullable|string|max:255',
+            'user_id' => 'required|integer',
+            'category_id' => 'required|integer',
+            'published_at' => 'required|date',
         ];
 
-        $request->validate($rules);
+        dd($request->body);
+
+        // $request->validate($rules);
+
+        // Post::create([
+        //     'title' => $request->title,
+        //     'description' => $request->description,
+        //     'body' => $request->body,
+        //     'status' => $request->status,
+        //     'image_path' => $request->image_path,
+        //     'user_id' => auth()->user()->id,
+        //     'category_id' => $request->category_id,
+        //     'published_at' => $request->published_at,
+        // ]);
     }
 
     /**
