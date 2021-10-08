@@ -1,9 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
 @layer components {
     .btn-accent {
-        @apply px-6 py-3 uppercase font-light bg-accent text-white text-lg transition duration-150 ease-in hover:opacity-80;
+        @apply inline-block px-6 py-3 uppercase font-light bg-accent text-white text-lg transition duration-150 ease-in hover:opacity-80;
     }
 }

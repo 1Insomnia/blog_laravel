@@ -34,7 +34,6 @@ class PostController extends Controller
     public function create()
     {
         $categories = Category::all();
-
         return view('pages.blog.create')
             ->with(['categories' => $categories]);
     }
@@ -114,8 +113,14 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(int $id)
     {
-        //
+        $post = Post::find($id);
+
+        if ($post->delete()) {
+            return redirect()->route('post.index')->with('message', "Successfully deleted post {$post->title}");
+        } else {
+            return redirect()->route('post.index')->with('message', "Error deleting post {$post->title}");
+        }
     }
 }

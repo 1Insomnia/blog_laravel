@@ -3,9 +3,6 @@
 @section('title', 'Home')
 
 @section('content')
-    @auth()
-        {{ auth()->user()->id }}
-    @endauth
     <section class="h-screen bg-hero-pattern bg-center bg-cover flex items-center justify-center" id="hero">
         <div class="text-center px-4">
             <h1 class="text-white text-2xl font-light uppercase tracking-widest mb-4 md:text-5xl lg:text-7xl lg:mb-8">

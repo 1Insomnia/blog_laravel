@@ -15,7 +15,7 @@ module.exports = {
                 dim: "#F7F7F7",
             },
             fontFamily: {
-                sans: ["Nunito", ...defaultTheme.fontFamily.sans],
+                sans: ["Inter", ...defaultTheme.fontFamily.sans],
             },
             backgroundImage: {
                 "hero-pattern":
