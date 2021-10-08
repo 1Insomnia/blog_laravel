@@ -14,6 +14,9 @@ module.exports = {
                 accent: "#823eb7",
                 dim: "#F7F7F7",
             },
+            width: {
+                "w-350": "350px",
+            },
             fontFamily: {
                 sans: ["Inter", ...defaultTheme.fontFamily.sans],
             },

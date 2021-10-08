@@ -11,7 +11,7 @@
                 {{-- Validation Errors --}}
                 <x-validation-errors>
                 </x-validation-errors>
-                <form class="mt-6" action="{{ route('post.store') }}" method="POST"
+                <form class="mt-6" action="{{ route('blog.store') }}" method="POST"
                     enctype="multipart/form-data">
                     @csrf
 

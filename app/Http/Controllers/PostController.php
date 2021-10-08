@@ -57,20 +57,21 @@ class PostController extends Controller
         ];
 
         $request->validate($rules);
+        $request->image ? $image_name = $request->image->store('posts') : $image_name = null;
 
-        // Post::create([
-        //     'title' => $request->title,
-        //     'slug' => Str::slug($request->title , '-'),
-        //     'description' => $request->description,
-        //     'body' => $request->body,
-        //     'status' => $request->status,
-        //     'image_path' => $request->image_path,
-        //     'user_id' => auth()->user()->id,
-        //     'category_id' => $request->category_id,
-        //     'published_at' => Carbon::now()->toDateTimeString(),
-        // ]);
+         Post::create([
+             'title' => $request->title,
+             'slug' => Str::slug($request->title , '-'),
+             'description' => $request->description,
+             'body' => $request->body,
+             'status' => $request->status,
+             'image_path' => $image_name,
+             'user_id' => auth()->user()->id,
+             'category_id' => $request->category_id,
+             'published_at' => Carbon::now()->toDateTimeString(),
+         ]);
 
-        // return redirect()->route('post.index')->with('message', "Post {$request->title} created");
+         return redirect()->route('blog.index')->with('message', "Post {$request->title} created");
     }
 
     /**
@@ -79,9 +80,10 @@ class PostController extends Controller
      * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show(string $slug)
     {
-        //
+        $post = Post::where('slug', $slug)->first();
+        return view('pages.blog.show')->with(['post' => $post]);
     }
 
     /**
