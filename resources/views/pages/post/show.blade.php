@@ -8,20 +8,25 @@
 
 @section('content')
     <section>
-        <div class="container py-6 md:py-12 lg:py-24">
-            <div class="pb-8 border-b border-gray-200 md:flex md:items-center p-4">
-                <h1 class="text-xl font-bold">{{ $post->title }}</h1>
-                <h2 class="md:pl-4 text-accent">{{ $post->category->name }}</h2>
-                <h3 class="md:pl-4 text-accent font-bold">{{ $post->publishedAt() }}</h3>
-            </div>
-            <div class="pb-8 border-b border-gray-200 md:flex md:items-center p-4">
-                <div class="" id="postBody">
-                    {!! Str::markdown($post->body) !!}
+        <div class="container pt-20">
+            <div class="w-80-ch">
+                {{-- Post Heading --}}
+                <h1 class="mb-5 heading-1">{{ $post->title }}</h1>
+                <div class="flex items-center text-sm text-light">
+                    <span>{{ $post->publishedAt() }}</span>
+                    &nbsp; — &nbsp;
+                    <span class="block" class="text-primary">#{{ $post->category->name }}</span>
+                </div>
+
+                {{-- Post Body --}}
+                <div class="mt-5 post-body">
+                    {!! $post->displayBody() !!}
+                </div>
+
+                {{-- Comment Section --}}
+                <div class="mt-10 lg:flex items-center p-5 border border-lighter  rounded">
+                    Comment Section
                 </div>
             </div>
-            <div class="mt-4">
-                <a href="{{ route('blog.edit', $post->slug) }}" class="btn-accent">Edit Post</a>
-            </div>
-        </div>
     </section>
 @endsection

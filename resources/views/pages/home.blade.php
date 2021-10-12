@@ -3,7 +3,7 @@
 @section('title', 'Home')
 
 @section('content')
-    <section class="bg-hero-pattern bg-center bg-cover flex items-center justify-center" id="hero">
+    <section class="relative bg-hero-pattern bg-center bg-cover flex items-center justify-center" id="hero">
         <div class="text-center px-4">
             <h1 class="text-white font-bold text-big-sm md:text-big-sm lg:text-big-lg opacity-50">
                 Nux Blog
@@ -11,6 +11,13 @@
             <h2 class="text-xs text-white font-semibold uppercase tracking-wide opacity-70 md:text-base">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, ipsa?
             </h2>
+        </div>
+        <div class="absolute bottom-4 animate-pulse text-white opacity-70">
+            <svg class=" w-8 h-8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="1.5" shape-rendering="geometricPrecision" viewBox="0 0 24 24" class="jsx-3995436223"
+                height="24" width="24" style="color: currentcolor;">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5"></path>
+            </svg>
         </div>
     </section>
     <section class="bg-dim" id="about">
@@ -150,7 +157,8 @@
                 <p class="uppercase">Lorem ipsum dolor sit amet.</p>
             </div>
             <div class="flex flex-wrap justify-center gap-4 md:gap-8 lg:gap-12">
-                <div class="shadow-xl text-center" style=" max-width: 350px;">
+                <div
+                    class="text-center max-w-350 shadow-lg transition ease-out duration-300 transform hover:-translate-y-4 hover:shadow-xl">
                     <img class="object-cover" src="{{ asset('assets/img/home/books.jpg') }}" alt="books pictures">
                     <div class="py-5">
                         <h4 class="font-semibold text-xl mb-2">Lorem.</h4>
@@ -159,7 +167,8 @@
                         </p>
                     </div>
                 </div>
-                <div class="shadow-xl text-center" style=" max-width: 350px;">
+                <div
+                    class="text-center max-w-350 shadow-lg transition ease-out duration-300 transform hover:-translate-y-4 hover:shadow-xl">
                     <img class="object-cover" src="{{ asset('assets/img/home/computer.jpg') }}"
                         alt="person pointing finger at computer screen">
                     <div class="py-5">
@@ -169,7 +178,8 @@
                         </p>
                     </div>
                 </div>
-                <div class="shadow-xl text-center" style=" max-width: 350px;">
+                <div
+                    class="text-center max-w-350 shadow-lg transition ease-out duration-300 transform hover:-translate-y-4 hover:shadow-xl">
                     <img class="object-cover" src="{{ asset('assets/img/home/hacking.jpg') }}"
                         alt="person working on computer in a meet up">
                     <div class="py-5">
@@ -189,7 +199,7 @@
                 <p class="uppercase">Lorem ipsum dolor sit amet.</p>
             </div>
             <div class="flex flex-wrap justify-center gap-4 md:gap-8 lg:gap-12">
-                <div style="max-width: 350px;">
+                <div class="max-w-350">
                     <img class="w-40 h-40 object-cover mb-10 rounded-full mx-auto"
                         src="{{ asset('assets/img/home/testimonial-picture1.jpg') }}" alt="">
                     <div class="text-center">
@@ -202,7 +212,7 @@
                             libero aliquam cum itaque."</p>
                     </div>
                 </div>
-                <div style="max-width: 350px;">
+                <div class="max-w-350">
                     <img class="w-40 h-40 object-cover mb-10 rounded-full mx-auto"
                         src="{{ asset('assets/img/home/testimonial-picture2.jpg') }}" alt="">
                     <div class="text-center">
@@ -215,7 +225,7 @@
                             libero aliquam cum itaque."</p>
                     </div>
                 </div>
-                <div style="max-width: 350px;">
+                <div class="max-w-350">
                     <img class="w-40 h-40 object-cover mb-10 rounded-full mx-auto"
                         src="{{ asset('assets/img/home/testimonial-picture3.jpg') }}" alt="">
                     <div class="text-center">
@@ -228,7 +238,7 @@
                             libero aliquam cum itaque."</p>
                     </div>
                 </div>
-                <div style="max-width: 350px;">
+                <div class="max-w-350">
                     <img class="w-40 h-40 object-cover mb-10 rounded-full mx-auto"
                         src="{{ asset('assets/img/home/testimonial-picture4.jpg') }}" alt="">
                     <div class="text-center">
@@ -241,7 +251,7 @@
                             libero aliquam cum itaque."</p>
                     </div>
                 </div>
-                <div style="max-width: 350px;">
+                <div class="max-w-350">
                     <img class="w-40 h-40 object-cover mb-10 rounded-full mx-auto"
                         src="{{ asset('assets/img/home/testimonial-picture5.jpg') }}" alt="">
                     <div class="text-center">
@@ -254,7 +264,7 @@
                             libero aliquam cum itaque."</p>
                     </div>
                 </div>
-                <div style="max-width: 350px;">
+                <div class="max-w-350">
                     <img class="w-40 h-40 object-cover mb-10 rounded-full mx-auto"
                         src="{{ asset('assets/img/home/testimonial-picture6.jpg') }}" alt="">
                     <div class="text-center">

@@ -37,21 +37,19 @@
 
                     {{-- Blog Post --}}
                     @foreach ($posts as $post)
-                        <a class="mt-12 transition block border border-lighter w-full mb-10 p-5 rounded"
-                            href="https://blog.laravel.com/forge-php-81-release-candidate-is-now-supported">
+                        <a class="mt-12 block border border-lighter w-full mb-10 p-5 rounded shadow-lg transition ease-out duration-300 transform hover:-translate-y-4 hover:shadow-xl"
+                            href="{{ route('blog.show', $post->slug) }}">
 
                             @if ($post->image)
                                 <div class="block h-post-card-image bg-cover bg-center bg-no-repeat w-full h-48 mb-5"
                                     style="background-image: url('https://laravel-blog-assets.s3.amazonaws.com/vzO9spKEYmoaORj64y0IZe92IsIIc7ZBtKcFbsJB.png')">
                                 </div>
                             @endif
-
                             <article class="flex flex-col justify-between flex-1">
                                 <div>
-                                    <h2 class="font-sans leading-normal block mb-6">
+                                    <h2 class="heading-4 leading-normal block mb-6">
                                         {{ $post->title }}
                                     </h2>
-
                                     <p class="mb-6 font-serif leading-loose">
                                         {{ $post->description }}
                                     </p>

@@ -18,7 +18,7 @@
         </button>
 
         {{-- Middle Container --}}
-        <div class="hidden lg:block lg:h-full">
+        <div class="hidden lg:flex-1 lg:flex lg:items-center lg:justify-center lg:h-full">
             {{-- Nav Desktop --}}
             <nav class="lg:h-full lg:flex lg:items-center" id="navDesktop" aria-label="Navigation Links">
                 <div class="flex uppercase tracking-widest h-full text-sm" id="navList">

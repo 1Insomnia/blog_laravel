@@ -5,6 +5,7 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Post extends Model
 {
@@ -23,6 +24,10 @@ class Post extends Model
     }
 
     public function publishedAt(){
-        return Carbon::parse($this->published_at)->format('d D - M - Y');
+        return Carbon::parse($this->published_at)->format('M, d Y');
+    }
+
+    public function displayBody(){
+        return Str::markdown($this->body);
     }
 }

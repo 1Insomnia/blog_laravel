@@ -24,6 +24,12 @@ module.exports = {
                 "big-md": "8rem",
                 "big-lg": "10rem",
             },
+            width: {
+                "80-ch": "80ch",
+            },
+            maxWidth: {
+                350: "350px",
+            },
             colors: {
                 foreground: {
                     DEFAULT: "#000",
@@ -81,9 +87,6 @@ module.exports = {
                     magenta: "#eb367f",
                     pink: "#ff0080",
                     yellow: "#fff500",
-                },
-                width: {
-                    "w-350": "350px",
                 },
             },
             fontFamily: {
