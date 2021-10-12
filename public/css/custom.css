@@ -2,8 +2,12 @@
     --primary: #f81ce5;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 #main {
-    padding-top: 71px;
+    margin-top: 80px;
 }
 
 #header {
@@ -15,7 +19,7 @@
 }
 
 #header > div {
-    height: 71px;
+    height: 80px;
 }
 
 .burger {
@@ -114,4 +118,8 @@
 
 .nav-link:hover {
     color: var(--primary);
+}
+
+.bg-hero-pattern {
+    height: calc(100vh - 80px);
 }

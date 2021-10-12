@@ -2,12 +2,15 @@
     <!-- Session Status -->
     <div class="min-h-screen mt-10 px-5 md:flex md:items-center md:justify-center">
         <div class="md:shadow-lg md:p-12">
+
             <div class="mb-10 text-center">
                 <h1 class="heading-1">Login</h1>
             </div>
-            <x-auth-session-status class="mb-4" :status="session('status')" />
+
             <!-- Validation Errors -->
+            <x-auth-session-status class="mb-4" :status="session('status')" />
             <x-auth-validation-errors class="mb-4" :errors="$errors" />
+
             {{-- Form --}}
             <form method="POST" action="{{ route('login') }}">
                 <div class="md:mx-auto" style="width: 540px;">

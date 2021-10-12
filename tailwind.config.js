@@ -19,6 +19,11 @@ module.exports = {
             },
         },
         extend: {
+            fontSize: {
+                "big-sm": "4rem",
+                "big-md": "8rem",
+                "big-lg": "10rem",
+            },
             colors: {
                 foreground: {
                     DEFAULT: "#000",
@@ -77,9 +82,9 @@ module.exports = {
                     pink: "#ff0080",
                     yellow: "#fff500",
                 },
-            },
-            width: {
-                "w-350": "350px",
+                width: {
+                    "w-350": "350px",
+                },
             },
             fontFamily: {
                 sans: ["Inter", ...defaultTheme.fontFamily.sans],
