@@ -3,9 +3,3 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-
-@layer components {
-    .btn-accent {
-        @apply inline-block px-6 py-3 uppercase font-light bg-accent text-white text-lg transition duration-150 ease-in hover:opacity-80;
-    }
-}

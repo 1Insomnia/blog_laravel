@@ -1,3 +1,5 @@
+@import url("./components.css");
+
 #main {
     padding-top: 71px;
 }
@@ -110,4 +112,66 @@
 
 .nav-link:hover {
     color: #823eb7;
+}
+
+.heading-1 {
+    font-size: 3rem;
+    letter-spacing: -0.02em;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+.heading-2 {
+    font-size: 2.25rem;
+    letter-spacing: -0.02em;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+.heading-3 {
+    font-size: 1.5rem;
+    letter-spacing: -0.02em;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+.heading-4 {
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+.heading-5 {
+    font-size: 1rem;
+    letter-spacing: -0.01em;
+    font-weight: 600;
+}
+
+.heading-6 {
+    font-size: 0.875rem;
+    letter-spacing: -0.01em;
+    font-weight: 600;
+}
+
+.heading-6 {
+    font-size: 0.875rem;
+    letter-spacing: -0.005em;
+    font-weight: 600;
+}
+
+.paragraph-base {
+    font-size: 1em;
+    line-height: 1.625em;
+    font-weight: 400;
+}
+
+.paragraph-base b {
+    font-weight: 600;
+}
+
+.paragraph-sm {
+    font-size: 0.875em;
+    line-height: 1.5;
+    font-weight: 400;
 }

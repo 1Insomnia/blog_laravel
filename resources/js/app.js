@@ -25,6 +25,10 @@ const editor = new Editor({
 const createPostBtn = document.querySelector("#createPostBtn");
 const bodyInput = document.querySelector("#bodyInput");
 
+if (bodyInput.value) {
+    editor.setMarkdown(bodyInput.value);
+}
+
 createPostBtn.addEventListener("click", (e) => {
     const postContent = editor.getMarkdown();
     bodyInput.value = postContent;

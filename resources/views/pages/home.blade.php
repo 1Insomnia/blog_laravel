@@ -3,22 +3,21 @@
 @section('title', 'Home')
 
 @section('content')
+    <section>
+        <button class="btn">Hello</button>
+    </section>
     <section class="h-screen bg-hero-pattern bg-center bg-cover flex items-center justify-center" id="hero">
         <div class="text-center px-4">
             <h1 class="text-white text-2xl font-light uppercase tracking-widest mb-4 md:text-5xl lg:text-7xl lg:mb-8">
                 Nux
                 Blog</h1>
             <h2 class="text-xs text-white font-semibold uppercase tracking-wide opacity-70 md:text-base">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod sed vitae excepturi ducimus nesciunt
-                dignissimos beatae, fuga distinctio eius, quaerat magnam cumque officiis est neque nostrum assumenda
-                exercitationem voluptates esse placeat. Dolor voluptates assumenda exercitationem placeat, culpa eveniet,
-                consequuntur perspiciatis voluptatibus necessitatibus porro quibusdam, esse repudiandae sed laboriosam dicta
-                soluta.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, iure!
             </h2>
         </div>
     </section>
     <section class="bg-dim" id="about">
-        <div class="container mx-auto px-5 py-6 md:py-12 lg:py-24">
+        <div class="container py-6 md:py-12 lg:py-24">
             <div class="text-center">
                 <div class="mb-10 text-center md:mb-16">
                     <h2 class="text-2xl uppercase mb-4">About Me</h2>
@@ -84,7 +83,7 @@
         </div>
     </section>
     <section id="services">
-        <div class="container mx-auto px-5 py-6 md:py-12 lg:py-24">
+        <div class="container py-6 md:py-12 lg:py-24">
             <div class="mb-20 text-center">
                 <h2 class="text-2xl uppercase mb-4">Services</h2>
                 <p class="uppercase">Lorem ipsum dolor sit amet.</p>
@@ -148,7 +147,7 @@
         </div>
     </section>
     <section class="bg-dim" id="projects">
-        <div class="container mx-auto px-5 py-6 md:py-12 lg:py-24">
+        <div class="container py-6 md:py-12 lg:py-24">
             <div class="mb-20 text-center">
                 <h2 class="text-2xl uppercase mb-4">Projects</h2>
                 <p class="uppercase">Lorem ipsum dolor sit amet.</p>
@@ -187,7 +186,7 @@
         </div>
     </section>
     <section id="testimonials">
-        <div class="container mx-auto px-5 py-6 md:py-12 lg:py-24">
+        <div class="container py-6 md:py-12 lg:py-24">
             <div class="mb-20 text-center">
                 <h2 class="text-2xl uppercase mb-4">Testimonials</h2>
                 <p class="uppercase">Lorem ipsum dolor sit amet.</p>

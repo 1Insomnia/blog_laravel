@@ -25934,6 +25934,11 @@ var editor = new _toast_ui_editor__WEBPACK_IMPORTED_MODULE_0__["default"]({
 
 var createPostBtn = document.querySelector("#createPostBtn");
 var bodyInput = document.querySelector("#bodyInput");
+
+if (bodyInput.value) {
+  editor.setMarkdown(bodyInput.value);
+}
+
 createPostBtn.addEventListener("click", function (e) {
   var postContent = editor.getMarkdown();
   bodyInput.value = postContent;
