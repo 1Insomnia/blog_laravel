@@ -18,7 +18,7 @@
     @stack('extra-javascript')
 </head>
 
-<body class="antialiased text-dark">
+<body class="antialiased font-sans text-foreground">
     @include('includes.header')
     <main class="min-h-screen" id="main">
         @yield('content')

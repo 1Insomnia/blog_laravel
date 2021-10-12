@@ -3,9 +3,6 @@
 @section('title', 'Home')
 
 @section('content')
-    <section>
-        <button class="btn">Hello</button>
-    </section>
     <section class="h-screen bg-hero-pattern bg-center bg-cover flex items-center justify-center" id="hero">
         <div class="text-center px-4">
             <h1 class="text-white text-2xl font-light uppercase tracking-widest mb-4 md:text-5xl lg:text-7xl lg:mb-8">
@@ -20,7 +17,7 @@
         <div class="container py-6 md:py-12 lg:py-24">
             <div class="text-center">
                 <div class="mb-10 text-center md:mb-16">
-                    <h2 class="text-2xl uppercase mb-4">About Me</h2>
+                    <h2 class="heading-2 mb-4">About Me</h2>
                     <p class="uppercase">Lorem ipsum dolor sit amet.</p>
                 </div>
                 <img class="w-40 h-40 object-cover mx-auto rounded-full mb-10"
@@ -85,7 +82,7 @@
     <section id="services">
         <div class="container py-6 md:py-12 lg:py-24">
             <div class="mb-20 text-center">
-                <h2 class="text-2xl uppercase mb-4">Services</h2>
+                <h2 class="heading-2 mb-4">Services</h2>
                 <p class="uppercase">Lorem ipsum dolor sit amet.</p>
             </div>
             <div class="flex flex-wrap justify-center gap-4 md:gap-8 lg:gap-12">
@@ -149,7 +146,7 @@
     <section class="bg-dim" id="projects">
         <div class="container py-6 md:py-12 lg:py-24">
             <div class="mb-20 text-center">
-                <h2 class="text-2xl uppercase mb-4">Projects</h2>
+                <h2 class="heading-2 mb-4">Projects</h2>
                 <p class="uppercase">Lorem ipsum dolor sit amet.</p>
             </div>
             <div class="flex flex-wrap justify-center gap-4 md:gap-8 lg:gap-12">
@@ -188,7 +185,7 @@
     <section id="testimonials">
         <div class="container py-6 md:py-12 lg:py-24">
             <div class="mb-20 text-center">
-                <h2 class="text-2xl uppercase mb-4">Testimonials</h2>
+                <h2 class="heading-2">Testimonials</h2>
                 <p class="uppercase">Lorem ipsum dolor sit amet.</p>
             </div>
             <div class="flex flex-wrap justify-center gap-4 md:gap-8 lg:gap-12">

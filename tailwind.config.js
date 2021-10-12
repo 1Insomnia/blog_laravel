@@ -11,8 +11,8 @@ module.exports = {
         container: {
             center: true,
             padding: {
-                DEFAULT: "0 20px",
-                sm: "0 20px",
+                DEFAULT: "1.5rem",
+                sm: "1.5rem",
                 lg: "0",
                 xl: "0",
                 "2x:": "0",
@@ -25,6 +25,9 @@ module.exports = {
                 },
                 background: {
                     DEFAULT: "#fff",
+                },
+                primary: {
+                    DEFAULT: "#f81ce5",
                 },
                 // Default Colors
                 success: {

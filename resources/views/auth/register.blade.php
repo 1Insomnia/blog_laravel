@@ -3,52 +3,48 @@
         <div class="md:shadow-lg md:p-12">
             <!-- Validation Errors -->
             <div class="mb-10 text-center md:mb-16">
-                <h1 class="text-2xl uppercase mb-4">Register</h1>
+                <h1 class="heading-1 mb-10">Register</h1>
             </div>
             <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
+            {{-- Form --}}
             <form method="POST" action="{{ route('register') }}">
                 @csrf
-                <div class="md:mx-auto" style=" min-width: 540px;">
+                <div class="md:mx-auto" style="width: 540px;">
                     <!-- Name -->
                     <div>
                         <div>
-                            <label class="block text-lg mb-4" for="name">Name</label>
-                            <input
-                                class="ring-0 bg-dim outline-none focus:outline-none block w-full px-1 py-3 border-b-2 border-gray-500 focus:border-accent"
-                                type="text" name="name" value="{{ old('name') }}" required autofocus>
+                            <x-form.label for="name">Name</x-form.label>
+                            <x-form.input type="text" name="name" value="{{ old('name') }}" required autofocus>
+                            </x-form.input>
                         </div>
                     </div>
                     <!-- Email Address -->
                     <div class="mt-4">
-                        <label class="block text-lg mb-4" for="email">Email</label>
-                        <input
-                            class="ring-0 bg-dim outline-none focus:outline-none block w-full px-1 py-3 border-b-2 border-gray-500 focus:border-accent"
-                            type="email" name="email" value="{{ old('email') }}" required>
+                        <x-form.label for="email">Email</x-form.label>
+                        <x-form.input type="email" name="email" value="{{ old('email') }}" required></x-form.input>
                     </div>
                     <!-- Password -->
                     <div class="mt-4">
-                        <label class="block text-lg mb-4" for="password">Password</label>
-                        <input
-                            class="ring-0 bg-dim outline-none focus:outline-none block w-full px-1 py-3 border-b-2 border-gray-500 focus:border-accent"
-                            type="password" name="password" required autocomplete="new-password">
+                        <x-form.label for="password">Password</x-form.label>
+                        <x-form.input type="password" name="password" required autocomplete="new-password">
+                        </x-form.input>
                     </div>
                     <!-- Confirm Password -->
                     <div class="mt-4">
-                        <label class="block text-lg mb-4" for="password_confirmation">Confirm Password</label>
-                        <input
-                            class="ring-0 bg-dim outline-none focus:outline-none block w-full px-1 py-3 border-b-2 border-gray-500 focus:border-accent"
-                            type="password" name="password_confirmation" required>
+                        <x-form.label for="password_confirmation">Confirm Password</x-form.label>
+                        <x-form.input type="password" name="password_confirmation" required></x-form.input>
                     </div>
-
-                    <div class="flex items-center justify-end mt-4">
-                        <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                            {{ __('Already registered?') }}
-                        </a>
-                        <button
-                            class="ml-4 border border-transparent outline-none focus:outline-none px-6 py-2 uppercase text-sm bg-accent text-white transition duration-300 ease-in hover:bg-white hover:text-accent hover:border-accent">
+                    <div class="mt-8">
+                        <button class="btn-success">
                             Register
                         </button>
+                    </div>
+                    <div class="mt-12 text-center">
+                        Already registered ?
+                        <a class="text-success transition duration-200 ease-linear hover:text-success-light"
+                            href="{{ route('login') }}">
+                            Login
+                        </a>
                     </div>
                 </div>
             </form>
