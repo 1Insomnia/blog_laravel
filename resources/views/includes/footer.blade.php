@@ -1,10 +1,10 @@
 <footer class="pt-6 md:pt-12 lg:pt-24" id="footer">
     <div class="border-t border-accent-300 space-y-6 px-5 py-12">
-        <div class="container flex flex-col items-center md:flex-row md:space-y-0">
-            <a class="flex-1 flex items-center justify-center" href="{{ route('home') }}">
+        <div class="container flex flex-col items-center space-y-4 md:flex-row md:space-y-0">
+            <a class="block flex-1" href="{{ route('home') }}">
                 &copy; Nux Bot
             </a>
-            <nav class="block flex-1 text-center" aria-label="footer navigation links">
+            <nav class="block flex-1" aria-label="footer navigation links">
                 <div class="flex items-center justify-center space-x-4">
                     <a class="block hover:text-primary" href="#" target="_blank" rel="noopener noreferrer"
                         aria-label="open link to my facebook">
@@ -49,7 +49,7 @@
                     </a>
                 </div>
             </nav>
-            <div class="flex-1 flex items-center justify-center">
+            <div class="block flex-1 text-right">
                 <a class="inline-block hover:text-primary" href="">Contact Me</a>
                 <a class="inline-block ml-4 hover:text-primary" href="">Privacy & Terms</a>
             </div>

@@ -14,16 +14,18 @@
                 @csrf
 
                 {{-- Title --}}
-                <label for="title" class="block mt-4 text-xs font-semibold uppercase md:text-base lg:text-lg">
+                <x-form.label for="title">
                     Title
-                </label>
-                <input id="title" type="text" name="title" placeholder="A cool title" autocomplete="email"
-                    class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-white focus:shadow-inner border border-transparent focus:border-dark"
-                    required autofocus value="{{ old('title') }}" />
+                </x-form.label>
+
+                <x-form.input id="title" type="text" name="title" placeholder="A cool title" autocomplete="email" required
+                    autofocus value="{{ old('title') }}">
+                </x-form.input>
+
                 {{-- Category --}}
-                <label for="categoryId" class="block mt-4 text-xs font-semibold uppercase md:text-base lg:text-lg">
+                <x-form.label for="categoryId">
                     Category
-                </label>
+                </x-form.label>
                 <select class="mt-4 outline-none w-full block p-3 bg-gray-200 text-gray-700" name="category_id"
                     id="categoryId">
                     <option class="outline-none w-full block p-3" selected>Select category</option>
@@ -31,10 +33,11 @@
                         <option class="p-3" value="{{ $category->id }}">{{ $category->name }}</option>
                     @endforeach
                 </select>
+
                 {{-- Status --}}
-                <label for="status" class="block mt-4 text-xs font-semibold uppercase md:text-base lg:text-lg">
+                <x-form.label for="status">
                     Status
-                </label>
+                </x-form.label>
                 <select class="mt-4 outline-none w-full block p-3 bg-gray-200 text-gray-700" name="status" id="status">
                     <option class="outline-none w-full block p-3" selected>Select Status</option>
                     <option class="p-3" value="0">In Progress</option>
@@ -42,25 +45,24 @@
                 </select>
 
                 {{-- Image --}}
-                <label for="image" class="block mt-4 text-xs font-semibold uppercase md:text-base lg:text-lg">
+                <x-form.label for="image">
                     Image
-                </label>
-                <input id="image" type="file" name="image"
-                    class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-white focus:shadow-inner border border-transparent focus:border-dark" />
+                </x-form.label>
+                <x-form.input id="image" type="file" name="image"></x-form.input>
 
                 {{-- Description --}}
-                <label for="description" class="block mt-4 text-xs font-semibold uppercase md:text-base lg:text-lg">
+                <x-form.label for="description">
                     Description
-                </label>
+                </x-form.label>
                 <textarea
                     class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-white focus:shadow-inner border border-transparent focus:border-dark"
                     id="description" name="description" type="text" placeholder="Description..."
                     value="{{ old('description') }}" required></textarea>
 
                 {{-- Body --}}
-                <label for="body" class="block mt-4 text-xs font-semibold uppercase md:text-base lg:text-lg">
+                <x-form.label for="body">
                     Body
-                </label>
+                </x-form.label>
                 {{-- Toast UI Editor --}}
                 <div class="mt-2" id="editor"></div>
                 {{-- Hidden input = editor.markdown --}}

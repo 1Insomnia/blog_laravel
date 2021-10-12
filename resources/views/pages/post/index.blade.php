@@ -11,20 +11,20 @@
                     </h1>
                     {{-- Only show create post/category for admin --}}
                     @can('admin')
-                        <div class="md:flex md:items-center md:space-x-4">
+                        <nav class="md:flex md:items-center md:space-x-4">
                             <div class="pt-8 mb-4 md:pt-0">
                                 {{-- Create New Post Link --}}
-                                <a class="btn-accent" href="{{ route('blog.create') }}">
+                                <a class="btn-success" href="{{ route('blog.create') }}">
                                     Create Post
                                 </a>
                             </div>
                             <div class="pt-2 mb-4 md:pt-0">
                                 {{-- Create New Category Link --}}
-                                <a class="btn-accent" href="{{ route('category.create') }}">
+                                <a class="btn-success" href="{{ route('category.create') }}">
                                     Create Category
                                 </a>
                             </div>
-                        </div>
+                        </nav>
                     @endcan
 
                     @if (session('message'))
@@ -37,26 +37,33 @@
 
                     {{-- Blog Post --}}
                     @foreach ($posts as $post)
-                        <a class="no-underline transition block border border-lighter w-full mb-10 p-5 rounded"
+                        <a class="mt-12 transition block border border-lighter w-full mb-10 p-5 rounded"
                             href="https://blog.laravel.com/forge-php-81-release-candidate-is-now-supported">
+
                             @if ($post->image)
                                 <div class="block h-post-card-image bg-cover bg-center bg-no-repeat w-full h-48 mb-5"
                                     style="background-image: url('https://laravel-blog-assets.s3.amazonaws.com/vzO9spKEYmoaORj64y0IZe92IsIIc7ZBtKcFbsJB.png')">
                                 </div>
                             @endif
+
                             <article class="flex flex-col justify-between flex-1">
                                 <div>
                                     <h2 class="font-sans leading-normal block mb-6">
                                         {{ $post->title }}
                                     </h2>
 
-                                    <p class="leading-normal mb-6 font-serif leading-loose">
+                                    <p class="mb-6 font-serif leading-loose">
                                         {{ $post->description }}
                                     </p>
                                 </div>
 
                                 <div class="flex items-center text-sm text-light">
                                     <span class="ml-auto">{{ $post->publishedAt() }}</span>
+                                </div>
+                                <div class="ml-auto mt-8">
+                                    <button class="btn-error">
+                                        Delete Post
+                                    </button>
                                 </div>
                             </article>
                         </a>

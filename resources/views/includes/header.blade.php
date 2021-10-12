@@ -3,14 +3,14 @@
     <div class="relative flex items-center justify-between container">
 
         {{-- Left Container --}}
-        <div class="lg:flex-1 lg:flex lg:items-center lg:justify-center">
+        <div class="">
             <a class="text-accent block font-bold" href="{{ route('home') }}">
                 <img class="h-8" src="{{ asset('assets/logo.png') }}" alt="Nux Blog Logo">
             </a>
         </div>
 
         {{-- Mobile Menu --}}
-        <button class="burger lg:hidden" id="burger" aria-haspopup="true" aria-controls="nav-menu"
+        <button class="burger lg:hidden lg:h-full" id="burger" aria-haspopup="true" aria-controls="nav-menu"
             aria-label="Primary Navigation Button">
             <span class="burger__inner">
                 <span></span>
@@ -18,7 +18,7 @@
         </button>
 
         {{-- Middle Container --}}
-        <div class="hidden lg:h-full lg:flex-1 lg:flex lg:items-center lg:justify-center">
+        <div class="hidden lg:block lg:h-full">
             {{-- Nav Desktop --}}
             <nav class="lg:h-full lg:flex lg:items-center" id="navDesktop" aria-label="Navigation Links">
                 <div class="flex uppercase tracking-widest h-full text-sm" id="navList">
@@ -42,13 +42,13 @@
         </div>
 
         {{-- Right Container --}}
-        <div class="hidden lg:flex-1 lg:flex lg:items-center lg:justify-center">
+        <div class="hidden lg:flex lg:items-center lg:justify-center lg:h-full">
             @guest
                 <a class="transition duration-200 ease-linear hover:text-primary" href="{{ route('login') }}"
                     aria-label="link to login page">
                     Login
                 </a>
-                <div class="flex items-center h-full pl-6">
+                <div class="flex items-center h-full pl-4">
                     <a class="btn uppercase" href="{{ route('register') }}" aria-label="link to login page">
                         Signup
                     </a>
@@ -59,10 +59,9 @@
                     aria-label="link to contact page">
                     Profile
                 </a>
-                <form action="{{ route('logout') }}" method="POST">
+                <form class="pl-4" action="{{ route('logout') }}" method="POST">
                     @csrf
-                    <button type="submit" class="relative flex items-center h-full px-2 uppercase nav-link"
-                        aria-label="logout of session">
+                    <button type="submit" class="btn" aria-label="logout of session">
                         Logout
                     </button>
                 </form>
