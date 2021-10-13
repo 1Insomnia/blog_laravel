@@ -7,6 +7,7 @@ use App\Models\Post;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 
 class PostController extends Controller
@@ -156,15 +157,30 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, string $slug)
     {
-        if (Post::where('slug', $slug)->first()->delete()){
-            return redirect()->route('blog.index')->with('message', 'Blog post deleted');
+        // Get Post by Slug
+        $post = Post::where('slug', $slug)->first();
+
+        // If post deleted return json response
+        if ($post->delete()){
+            // Flash error message to session
+            $request->session()->flash('message', "Post {$post->title} deleted");
+            return response()->json([
+                'succces' => "Post {$post->title} deleted"
+            ]);
+
+        // If post not deleted return json response
         } else {
-            return redirect()->route('blog.index')->with('message', 'An error has occured during deletion');
+            // Flash error message to session
+            $request->session()->flash('message', "Error {$post->title} not deleted");
+            return response()->json([
+                'error' => "Error {$post->title} not deleted"
+            ]);
+
         }
     }
 }

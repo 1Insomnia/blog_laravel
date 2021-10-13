@@ -1,35 +1,75 @@
 require("./bootstrap");
 
-import Editor from "@toast-ui/editor";
-import "@toast-ui/editor/dist/toastui-editor.css";
+import axios from "axios";
+
+const get = (element) => document.querySelector(element);
 
 // Burger Menu : Mobile - Tablet
-const burger = document.querySelector("#burger");
-const navMobile = document.querySelector("#navMobile");
+const burger = get("#burger");
+const navMobile = get("#navMobile");
 
 burger.addEventListener("click", (e) => {
     e.preventDefault();
     burger.classList.toggle("nav-is-open");
     burger.classList.toggle("no-hover");
     navMobile.classList.toggle("hidden");
+    document.body.classList.toggle("scroll-lock");
 });
 
-const editor = new Editor({
-    el: document.querySelector("#editor"),
-    height: "500px",
-    initialEditType: "markdown",
-    placeholder: "Write your blog post...",
+// Nav Mobile resize
+
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 1024) {
+        burger.classList.remove("nav-is-open");
+        burger.classList.remove("no-hover");
+        navMobile.classList.add("hidden");
+    }
 });
 
-// Handle Post Body Input
-const createPostBtn = document.querySelector("#createPostBtn");
-const bodyInput = document.querySelector("#bodyInput");
+// Modal
+const deletePostBtn = get("#deletePostBtn");
+const modalWrapper = get("#modalWrapper");
+const modal = get("#modal");
+const modalBtnCancel = get("#modalBtnCancel");
+const modalBtnConfirm = get("#modalBtnConfirm");
+const formDeletePost = get("#formDeletePost");
 
-if (bodyInput.value) {
-    editor.setMarkdown(bodyInput.value);
+if (deletePostBtn) {
+    let slug = "";
+    const token = get('meta[name="csrf-token"]').content;
+
+    deletePostBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        slug = e.target.dataset.slug;
+        modalWrapper.classList.toggle("modal-disabled");
+    });
+
+    modalWrapper.addEventListener("click", (e) => {
+        modalWrapper.classList.add("modal-disabled");
+    });
+
+    modal.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+    });
+
+    modalBtnCancel.addEventListener("click", (e) => {
+        modalWrapper.classList.add("modal-disabled");
+    });
+
+    modalBtnConfirm.addEventListener("click", (e) => {
+        console.log(token);
+        axios
+            .delete("/blog/" + slug, {
+                headers: {
+                    "X-CSRF-TOKEN": token,
+                },
+            })
+            .then((res) => {
+                console.log(res);
+                window.location.reload();
+            })
+            .catch((err) => console.error(err));
+    });
 }
-
-createPostBtn.addEventListener("click", (e) => {
-    const postContent = editor.getMarkdown();
-    bodyInput.value = postContent;
-});

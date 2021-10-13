@@ -24,8 +24,14 @@ module.exports = {
                 "big-md": "8rem",
                 "big-lg": "10rem",
             },
+            borderRadius: {
+                DEFAULT: "5px",
+            },
             width: {
                 "80-ch": "80ch",
+            },
+            minHeight: {
+                150: "150px",
             },
             maxWidth: {
                 350: "350px",

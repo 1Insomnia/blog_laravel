@@ -12,13 +12,13 @@
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, ipsa?
             </h2>
         </div>
-        <div class="absolute bottom-4 animate-pulse text-white opacity-70">
+        <a class="absolute bottom-4 animate-pulse text-white opacity-70" href="#about">
             <svg class=" w-8 h-8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                 stroke-width="1.5" shape-rendering="geometricPrecision" viewBox="0 0 24 24" class="jsx-3995436223"
                 height="24" width="24" style="color: currentcolor;">
                 <path d="M7 13l5 5 5-5M7 6l5 5 5-5"></path>
             </svg>
-        </div>
+        </a>
     </section>
     <section class="bg-dim" id="about">
         <div class="container py-6 md:py-12 lg:py-24">

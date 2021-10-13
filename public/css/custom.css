@@ -1,9 +1,23 @@
+@import url("./components.css");
+
 :root {
     --primary: #f81ce5;
 }
 
 html {
     scroll-behavior: smooth;
+}
+
+::-moz-selection,
+::selection {
+    color: #fff;
+    background-color: var(--primary);
+}
+
+.scroll-lock {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
 }
 
 #main {
@@ -83,6 +97,22 @@ html {
     transform: scaleX(0.5);
 }
 
+/* Nav-mobile */
+
+.nav-mobile {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+
+    background-color: #fff;
+    z-index: 999;
+
+    top: 80px;
+    left: 0;
+
+    overflow: hidden;
+}
+
 /* When nav-is-open is toggle */
 .nav-is-open .burger__inner > span {
     transform: scaleX(0);
@@ -123,3 +153,5 @@ html {
 .bg-hero-pattern {
     height: calc(100vh - 80px);
 }
+
+/* Components */

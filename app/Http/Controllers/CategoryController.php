@@ -11,6 +11,7 @@ class CategoryController extends Controller
     {
         $this->middleware(['auth', 'admin']);
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -39,7 +40,19 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255'
+        ]);
+
+        $category_create = Category::create([
+            'name' => $request->name
+        ]);
+
+        if ($category_create) {
+            return redirect()->route('category.index')->with('message', "Category {$request->title} deleted");
+        } else {
+            return redirect()->route('category.index')->with('message', "Error category {$request->name} not deleted");
+        }
     }
 
     /**
@@ -50,30 +63,47 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Category  $category
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit(int $id)
     {
-        //
+        return view('pages.category.edit')
+            ->width([
+                'category' => Category::findOrFail($id)
+            ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Category  $category
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, int $id)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255'
+        ]);
+
+        $category = Category::find($id);
+
+        $category_update = $category->update([
+            'name' => $request->name
+        ]);
+
+        if ($category_update) {
+            return redirect()->route('category.index')->with('message', "Category {$request->title} updated");
+        } else {
+            return redirect()->route('category.index')->with('message', "Error category {$request->name} not updated");
+        }
     }
 
     /**

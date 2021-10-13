@@ -2,6 +2,10 @@
 @section('title', 'blog')
 
 @section('content')
+    <x-modal.modal-post-delete>
+        <x-slot name="title">Confirm Delete</x-slot>
+        Do you want to delete this post ?
+    </x-modal.modal-post-delete>
     <section id="blogPosts">
         <div class="px-6 py-8">
             <div class="container">
@@ -37,8 +41,8 @@
 
                     {{-- Blog Post --}}
                     @foreach ($posts as $post)
-                        <a class="mt-12 block border border-lighter w-full mb-10 p-5 rounded shadow-lg transition ease-out duration-300 transform hover:-translate-y-4 hover:shadow-xl"
-                            href="{{ route('blog.show', $post->slug) }}">
+                        <div
+                            class="mt-12 block border border-lighter w-full mb-10 p-5 rounded shadow-lg transition ease-out duration-300 transform hover:-translate-y-4 hover:shadow-xl">
 
                             @if ($post->image)
                                 <div class="block h-post-card-image bg-cover bg-center bg-no-repeat w-full h-48 mb-5"
@@ -55,16 +59,21 @@
                                     </p>
                                 </div>
 
-                                <div class="flex items-center text-sm text-light">
-                                    <span class="ml-auto">{{ $post->publishedAt() }}</span>
+                                <div class="flex items-center justify-between text-sm text-light">
+                                    <a class="underline text-success transition duration-200 ease-linear hover:text-success-light"
+                                        href="{{ route('blog.show', $post->slug) }}">Read More</a>
+                                    <span class="">{{ $post->publishedAt() }}</span>
                                 </div>
-                                <div class="ml-auto mt-8">
-                                    <button class="btn-error">
-                                        Delete Post
-                                    </button>
-                                </div>
+                                @can('admin')
+                                    <div class="mt-8 ml-auto">
+                                        <button class="btn-error" id="deletePostBtn" type="submit"
+                                            data-slug="{{ $post->slug }}">
+                                            Delete Post
+                                        </button>
+                                    </div>
+                                @endcan
                             </article>
-                        </a>
+                        </div>
                     @endforeach
 
                     {{-- Pagination --}}

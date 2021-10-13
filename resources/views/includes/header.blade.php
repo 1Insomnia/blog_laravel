@@ -1,11 +1,10 @@
 {{-- Header includes --}}
-<header class="bg-white shadow-xl" id="header">
-    <div class="relative flex items-center justify-between container">
-
+<header class="relative bg-white shadow-xl" id="header">
+    <div class="flex items-center justify-between container">
         {{-- Left Container --}}
         <div class="">
             <a class="text-accent block font-bold" href="{{ route('home') }}">
-                <img class="h-8" src="{{ asset('assets/logo.png') }}" alt="Nux Blog Logo">
+                <img class="h-6" src="{{ asset('assets/logo.png') }}" alt="Nux Blog Logo">
             </a>
         </div>
 
@@ -68,38 +67,48 @@
             @endauth
         </div>
         {{-- Nav Mobile --}}
-        <nav class="absolute top-20 left-0 bg-white w-full nav-mobile hidden pb-4" id="navMobile"
-            aria-label="Navigation links mobile">
-            <div class="space-y-4 uppercase tracking-widest container" id="navList">
-                <a class="block pl-4" href="{{ route('home') }}" aria-label="Link to homepage">
-                    Home
-                </a>
-                <a class="block pl-4" href="{{ route('blog.index') }}" aria-label="Link to blog page">
-                    Blog
-                </a>
-                <a class="block pl-4" href="#" aria-label="Link to about page">
-                    About
-                </a>
-                <a class="block pl-4" href="#" aria-label="Link to contact page">
-                    Contact
-                </a>
-                @guest
-                    <a class="block pl-4" href="{{ route('login') }}" aria-label="Link to login page">
-                        Login
-                    </a>
-                @endguest
-                @auth
-                    <a class="block pl-4" href="{{ route('dashboard.index') }}" aria-label="Link to contact page">
-                        Profile
-                    </a>
-                    <form action="{{ route('logout') }}" method="POST">
-                        @csrf
-                        <button type="submit" class="block pl-4 uppercase" aria-label="logout of session">
-                            Logout
-                        </button>
-                    </form>
-                @endauth
-            </div>
-        </nav>
     </div>
 </header>
+<nav class="nav-mobile hidden" id="navMobile" aria-label="Navigation links mobile">
+    <div class="tracking-widest container" id="navList">
+        @guest
+            <div class="py-2">
+                <a class="btn-outline-full-white py-4" href="{{ route('login') }}" aria-label="link to login page">
+                    Login
+                </a>
+            </div>
+            <div class="py-2">
+                <a class="btn-full" href="{{ route('register') }}" aria-label="link to login page">
+                    Signup
+                </a>
+            </div>
+        @endguest
+        @auth
+            <div class="py-2">
+                <a class="btn-outline-full-white" href="{{ route('dashboard.index') }}"
+                    aria-label="Link to contact page">
+                    Profile
+                </a>
+            </div>
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit" class="btn-full" aria-label="logout of session">
+                    Logout
+                </button>
+            </form>
+        @endauth
+        <a class="block pl-2 py-4 border-b border-accent-2" href="{{ route('home') }}" aria-label="Link to homepage">
+            Home
+        </a>
+        <a class="block pl-2 py-4 border-b border-accent-2" href="{{ route('blog.index') }}"
+            aria-label="Link to blog page">
+            Blog
+        </a>
+        <a class="block pl-2 py-4 border-b border-accent-2" href="#" aria-label="Link to about page">
+            About
+        </a>
+        <a class="block pl-2 py-4 border-b border-accent-2" href="#" aria-label="Link to contact page">
+            Contact
+        </a>
+    </div>
+</nav>
