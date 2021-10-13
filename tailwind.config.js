@@ -97,6 +97,7 @@ module.exports = {
             },
             fontFamily: {
                 sans: ["Inter", ...defaultTheme.fontFamily.sans],
+                serif: ["Spectral", ...defaultTheme.fontFamily.serif],
             },
             backgroundImage: {
                 "hero-pattern":
