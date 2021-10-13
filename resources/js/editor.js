@@ -9,14 +9,13 @@ const editor = new Editor({
 });
 
 // Handle Post Body Input
-const createPostBtn = document.querySelector("#createPostBtn");
+const postBtn = document.querySelector("#postBtn");
 const bodyInput = document.querySelector("#bodyInput");
 
 if (bodyInput.value) {
     editor.setMarkdown(bodyInput.value);
 }
 
-createPostBtn.addEventListener("click", (e) => {
-    const postContent = editor.getMarkdown();
-    bodyInput.value = postContent;
+postBtn.addEventListener("click", (e) => {
+    bodyInput.value = editor.getMarkdown();
 });

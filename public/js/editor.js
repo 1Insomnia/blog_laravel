@@ -38430,16 +38430,15 @@ var editor = new _toast_ui_editor__WEBPACK_IMPORTED_MODULE_0__["default"]({
   placeholder: "Write your blog post..."
 }); // Handle Post Body Input
 
-var createPostBtn = document.querySelector("#createPostBtn");
+var postBtn = document.querySelector("#postBtn");
 var bodyInput = document.querySelector("#bodyInput");
 
 if (bodyInput.value) {
   editor.setMarkdown(bodyInput.value);
 }
 
-createPostBtn.addEventListener("click", function (e) {
-  var postContent = editor.getMarkdown();
-  bodyInput.value = postContent;
+postBtn.addEventListener("click", function (e) {
+  bodyInput.value = editor.getMarkdown();
 });
 })();
 

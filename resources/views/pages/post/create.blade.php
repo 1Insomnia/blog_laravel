@@ -7,6 +7,7 @@
             <h2 class="heading-2">
                 Create Blog Post
             </h2>
+
             {{-- Validation Errors --}}
             <x-validation-errors>
             </x-validation-errors>
@@ -82,7 +83,7 @@
 
                 {{-- Submit & --}}
                 <div class="mt-8">
-                    <button type="submit" class="btn-success" id="createPostBtn">
+                    <button type="submit" class="btn-success" id="postBtn">
                         Create Post
                     </button>
                 </div>
