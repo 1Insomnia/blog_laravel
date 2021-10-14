@@ -28,7 +28,7 @@
         <article class="tab-content" id="posts">
             <div class="pt-12 mb-4">
                 {{-- Create New Post Link --}}
-                <a class="btn-success" href="{{ route('blog.create') }}">
+                <a class="btn-success" href="{{ route('post.create') }}">
                     Create Post
                 </a>
             </div>
@@ -69,12 +69,12 @@
                                         {{ $post->publishedAt() }}
                                     </td>
                                     <td class="px-3 py-2 border">
-                                        <a class="btn-warning" href="{{ route('blog.edit', $post->slug) }}">
+                                        <a class="btn-warning" href="{{ route('post.edit', $post->slug) }}">
                                             Edit
                                         </a>
                                     </td>
                                     <td class="px-3 py-2 border">
-                                        <form action="{{ route('blog.destroy', $post->slug) }}" method="post">
+                                        <form action="{{ route('post.destroy', $post->slug) }}" method="post">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn-error" type="submit" role="button">
