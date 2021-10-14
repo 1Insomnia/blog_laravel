@@ -8,9 +8,9 @@
             <h2 class="heading-2">
                 Create New Category
             </h2>
+
             {{-- Validation Errors --}}
-            <x-validation-errors>
-            </x-validation-errors>
+            <x-validation-errors></x-validation-errors>
 
             <form class="mt-6" action="{{ route('category.store') }}" method="POST">
                 @csrf
@@ -23,6 +23,7 @@
                         value="{{ old('name') }}">
                     </x-form.input>
                 </div>
+
                 {{-- Submit & --}}
                 <div class="mt-8">
                     <button type="submit" class="btn-success" id="createPostBtn">

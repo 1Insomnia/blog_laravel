@@ -25,7 +25,7 @@
                         aria-label="Link to homepage">
                         Home
                     </a>
-                    <a class="relative flex items-center h-full px-2 nav-link" href="{{ route('blog.index') }}"
+                    <a class="relative flex items-center h-full px-2 nav-link" href="{{ route('post.index') }}"
                         aria-label="Link to blog page">
                         Blog
                     </a>
@@ -100,7 +100,7 @@
         <a class="block pl-2 py-4 border-b border-accent-2" href="{{ route('home') }}" aria-label="Link to homepage">
             Home
         </a>
-        <a class="block pl-2 py-4 border-b border-accent-2" href="{{ route('blog.index') }}"
+        <a class="block pl-2 py-4 border-b border-accent-2" href="{{ route('post.index') }}"
             aria-label="Link to blog page">
             Blog
         </a>

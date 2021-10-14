@@ -13,6 +13,7 @@ const mix = require("laravel-mix");
 
 mix.js("resources/js/app.js", "public/js")
     .js("resources/js/editor.js", "public/js/editor.js")
+    .js("resources/js/dashboardIndex.js", "public/js/dashboardIndex.js")
     .postCss("resources/css/app.css", "public/css", [
         require("postcss-import"),
         require("tailwindcss"),

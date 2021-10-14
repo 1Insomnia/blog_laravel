@@ -77,9 +77,9 @@ class PostController extends Controller
         ]);
 
         if ($post_create) {
-            return redirect()->route('blog.index')->with('message', "Post {$request->title} created");
+            return redirect()->route('post.index')->with('message', "Post {$request->title} created");
         } else {
-            return redirect()->route('blog.index')->with('message', "Error during creation of post {$request->title}");
+            return redirect()->route('post.index')->with('message', "Error during creation of post {$request->title}");
         }
     }
 
@@ -148,9 +148,9 @@ class PostController extends Controller
         ]);
 
         if ($post_update) {
-            return redirect()->route('blog.index')->with('message', "Post {$request->title} updated");
+            return redirect()->route('post.index')->with('message', "Post {$request->title} updated");
         } else {
-            return redirect()->route('blog.index')->with('message', "Error during update of post {$request->title}");
+            return redirect()->route('post.index')->with('message', "Error during update of post {$request->title}");
         }
     }
 

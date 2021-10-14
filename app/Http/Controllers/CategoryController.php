@@ -9,7 +9,7 @@ class CategoryController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth', 'admin']);
+        $this->middleware(['auth', 'admin'])->except(['index', 'show']);
     }
 
     /**
@@ -19,7 +19,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return "Categories index";
+        return view('pages.category.index')
+            ->with([
+                'categories' => Category::all()
+            ]);
     }
 
     /**
@@ -58,12 +61,17 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Category  $category
+     * @param  string  $name
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show( string $name)
     {
+        $category = Category::where('name', $name)->first();
 
+        return view('pages.category.show')
+            ->with([
+                'category' => $category
+            ]);
     }
 
     /**

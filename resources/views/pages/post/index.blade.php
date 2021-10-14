@@ -1,5 +1,5 @@
 @extends('layouts.default')
-@section('title', 'Blog')
+@section('title', 'Blog Posts')
 
 @section('content')
     <x-modal.modal-post-delete>
@@ -19,7 +19,7 @@
                             <nav class="md:flex md:items-center md:space-x-4">
                                 <div class="pt-8 mb-4 md:pt-0">
                                     {{-- Create New Post Link --}}
-                                    <a class="btn-success" href="{{ route('blog.create') }}">
+                                    <a class="btn-success" href="{{ route('post.create') }}">
                                         Create Post
                                     </a>
                                 </div>
@@ -46,7 +46,7 @@
                                 class="mt-12 block border border-lighter w-full mb-10 p-5 rounded shadow-lg transition ease-out duration-300 transform hover:-translate-y-4 hover:shadow-xl">
                                 <div>
                                     <img class="block object-cover w-full h-52 mb-5"
-                                         src="https://source.unsplash.com/random" alt="">
+                                        src="https://source.unsplash.com/random" alt="">
                                 </div>
                                 <article class="flex flex-col justify-between flex-1">
                                     <div>
@@ -56,10 +56,10 @@
                                                 {{ $post->title }}
                                             </h2>
                                             <a href=""
-                                               class="block mb-2 underline text-success transition duration-200 ease-linear hover:text-success-light">
-                                                <h3>
+                                                class="block mb-2 underline text-success transition duration-200 ease-linear hover:text-success-light">
+                                                <a href="{{ route('category.show', $post->category->name) }}">
                                                     # {{ $post->category->name }}
-                                                </h3>
+                                                </a>
                                             </a>
                                         </div>
                                         {{-- Post Description --}}
@@ -70,15 +70,13 @@
 
                                     <div class="flex items-center justify-between text-sm text-light">
                                         <a class="flex items-center text-success transition duration-200 ease-linear hover:text-success-light"
-                                           href="{{ route('blog.show', $post->slug) }}">
+                                            href="{{ route('post.show', $post->slug) }}">
                                             <span class="block">Read More</span>
                                             <span class="ml-4 block">
-                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-linecap="round"
-                                                     stroke-linejoin="round" stroke-width="1.5"
-                                                     shape-rendering="geometricPrecision" viewBox="0 0 24 24"
-                                                >
-                                                    <path
-                                                        d="M5 12h14M12 5l7 7-7 7"></path>
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor"
+                                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                                    shape-rendering="geometricPrecision" viewBox="0 0 24 24">
+                                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
                                                 </svg>
                                             </span>
                                         </a>
@@ -87,12 +85,12 @@
                                     @can('admin')
                                         <div class="mt-8 ml-auto">
                                             <button class="btn-warning">
-                                                <a href="{{ route('blog.edit', $post->slug) }}">
+                                                <a href="{{ route('post.edit', $post->slug) }}">
                                                     Update Post
                                                 </a>
                                             </button>
                                             <button class="btn-error" id="deletePostBtn" type="submit"
-                                                    data-slug="{{ $post->slug }}">
+                                                data-slug="{{ $post->slug }}">
                                                 Delete Post
                                             </button>
                                         </div>
@@ -106,23 +104,23 @@
                             <div class="mt-8">
                                 <div class="flex">
                                     <a href="#"
-                                       class="px-3 py-2 mx-1 font-medium text-gray-500 bg-white rounded-md cursor-not-allowed">
+                                        class="px-3 py-2 mx-1 font-medium text-gray-500 bg-white rounded-md cursor-not-allowed">
                                         previous
                                     </a>
                                     <a href="#"
-                                       class="px-3 py-2 mx-1 font-medium text-gray-700 bg-white rounded-md hover:bg-blue-500 hover:text-white">
+                                        class="px-3 py-2 mx-1 font-medium text-gray-700 bg-white rounded-md hover:bg-blue-500 hover:text-white">
                                         1
                                     </a>
                                     <a href="#"
-                                       class="px-3 py-2 mx-1 font-medium text-gray-700 bg-white rounded-md hover:bg-blue-500 hover:text-white">
+                                        class="px-3 py-2 mx-1 font-medium text-gray-700 bg-white rounded-md hover:bg-blue-500 hover:text-white">
                                         2
                                     </a>
                                     <a href="#"
-                                       class="px-3 py-2 mx-1 font-medium text-gray-700 bg-white rounded-md hover:bg-blue-500 hover:text-white">
+                                        class="px-3 py-2 mx-1 font-medium text-gray-700 bg-white rounded-md hover:bg-blue-500 hover:text-white">
                                         3
                                     </a>
                                     <a href="#"
-                                       class="px-3 py-2 mx-1 font-medium text-gray-700 bg-white rounded-md hover:bg-blue-500 hover:text-white">
+                                        class="px-3 py-2 mx-1 font-medium text-gray-700 bg-white rounded-md hover:bg-blue-500 hover:text-white">
                                         Next
                                     </a>
                                 </div>
@@ -137,7 +135,7 @@
                                     @foreach ($categories as $category)
                                         <li>
                                             <a href="#"
-                                               class="underline text-success transition duration-200 ease-linear hover:text-success-light">
+                                                class="underline text-success transition duration-200 ease-linear hover:text-success-light">
                                                 # {{ $category->name }}
                                             </a>
                                         </li>
