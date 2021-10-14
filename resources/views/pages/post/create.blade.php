@@ -12,7 +12,7 @@
             <x-validation-errors>
             </x-validation-errors>
 
-            <form class="mt-6" action="{{ route('blog.store') }}" method="POST" enctype="multipart/form-data">
+            <form class="mt-6" action="{{ route('post.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 {{-- Title --}}
                 <div>
@@ -23,7 +23,6 @@
                         required autofocus value="{{ old('title') }}">
                     </x-form.input>
                 </div>
-
                 {{-- Category --}}
                 <div class="mt-4">
                     <x-form.label for="categoryId">

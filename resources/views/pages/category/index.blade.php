@@ -41,11 +41,11 @@
                                     <a class="flex items-center text-success transition duration-200 ease-linear hover:text-success-light"
                                         href="{{ route('post.show', $post->slug) }}">
                                         <span class="block">Read More</span>
-                                        <span class="ml-4 block">
-                                            <svg class="w-4 h-4" fill="none" stroke="currentColor"
-                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                                shape-rendering="geometricPrecision" viewBox="0 0 24 24">
-                                                <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                        <span class="ml-2 block">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                             </svg>
                                         </span>
                                     </a>

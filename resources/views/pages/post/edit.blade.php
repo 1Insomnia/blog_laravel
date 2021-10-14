@@ -12,8 +12,8 @@
             </x-validation-errors>
 
             {{-- Edit Form --}}
-            <form class="mt-6" action="{{ route('blog.update', $post->slug) }}" method="POST"
-                  enctype="multipart/form-data">
+            <form class="mt-6" action="{{ route('post.update', $post->slug) }}" method="POST"
+                enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
 
@@ -35,8 +35,7 @@
                         class="mt-4 block appearance-none outline-none bg-background w-full px-2 py-3 border border-accent-2 rounded-md focus:border-accent-8"
                         name="category_id" id="categoryId">
                         @foreach ($categories as $category)
-                            <option class="p-3" value="{{ $category->id }}"
-                                    @if ($post->category->id === $category->id) selected @endif>
+                            <option class="p-3" value="{{ $category->id }}" @if ($post->category->id === $category->id) selected @endif>
                                 {{ $category->name }}</option>
                         @endforeach
                     </select>
@@ -75,8 +74,8 @@
                     <textarea
                         class="mt-4 block appearance-none outline-none bg-background w-full px-2 py-3 border border-accent-2 rounded-md focus:border-accent-8"
                         id="description" name="description" type="text" value="{{ $post->description }}" required>
-                        {{ $post->description }}
-                    </textarea>
+                            {{ $post->description }}
+                        </textarea>
                 </div>
 
                 {{-- Body --}}
@@ -87,7 +86,7 @@
                 {{-- Toast UI Editor --}}
                 <div class="mt-2" id="editor"></div>
                 {{-- Hidden input = editor.markdown --}}
-                <input type="hidden" name="body" id="bodyInput" value="{{ $post->body }}" required/>
+                <input type="hidden" name="body" id="bodyInput" value="{{ $post->body }}" required />
 
                 {{-- Submit & --}}
                 <div class="mt-8">
