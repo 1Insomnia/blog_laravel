@@ -3,6 +3,7 @@ require("./bootstrap");
 import axios from "axios";
 
 const get = (element) => document.querySelector(element);
+const getAll = (element) => document.querySelectorAll(element);
 
 // Burger Menu : Mobile - Tablet
 const burger = get("#burger");
@@ -27,21 +28,23 @@ window.addEventListener("resize", () => {
 });
 
 // Modal
-const deletePostBtn = get("#deletePostBtn");
+const deletePostBtn = getAll("#deletePostBtn");
 const modalWrapper = get("#modalWrapper");
 const modal = get("#modal");
 const modalBtnCancel = get("#modalBtnCancel");
 const modalBtnConfirm = get("#modalBtnConfirm");
 const formDeletePost = get("#formDeletePost");
 
-if (deletePostBtn) {
+if (deletePostBtn && modalWrapper) {
     let slug = "";
     const token = get('meta[name="csrf-token"]').content;
 
-    deletePostBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        slug = e.target.dataset.slug;
-        modalWrapper.classList.toggle("modal-disabled");
+    deletePostBtn.forEach((button) => {
+        button.addEventListener("click", (e) => {
+            e.preventDefault();
+            slug = e.target.dataset.slug;
+            modalWrapper.classList.toggle("modal-disabled");
+        });
     });
 
     modalWrapper.addEventListener("click", (e) => {
@@ -59,9 +62,8 @@ if (deletePostBtn) {
     });
 
     modalBtnConfirm.addEventListener("click", (e) => {
-        console.log(token);
         axios
-            .delete("/blog/" + slug, {
+            .delete("/blog/post/" + slug, {
                 headers: {
                     "X-CSRF-TOKEN": token,
                 },
@@ -73,4 +75,3 @@ if (deletePostBtn) {
             .catch((err) => console.error(err));
     });
 }
-

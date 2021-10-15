@@ -27,8 +27,8 @@
                     <h2 class="heading-2 mb-4">About Me</h2>
                     <p class="uppercase">Lorem ipsum dolor sit amet.</p>
                 </div>
-                <img class="w-40 h-40 object-cover mx-auto rounded-full mb-10"
-                    src="{{ asset('assets/img/home/profile.jpg') }}" alt="">
+                <img class="w-40 h-40 object-cover mx-auto rounded-full mb-10" src="{{ asset('img/home/profile.jpg') }}"
+                    alt="">
                 <nav class="mb-10" aria-label="social links">
                     <div class="flex items-center justify-center space-x-4">
                         <a class="block hover:text-primary" href="#" target="_blank" rel="noopener noreferrer"
@@ -159,7 +159,7 @@
             <div class="flex flex-wrap justify-center gap-4 md:gap-8 lg:gap-12">
                 <div
                     class="text-center max-w-350 shadow-lg transition ease-out duration-300 transform hover:-translate-y-4 hover:shadow-xl">
-                    <img class="object-cover" src="{{ asset('assets/img/home/books.jpg') }}" alt="books pictures">
+                    <img class="object-cover" src="{{ asset('img/home/books.jpg') }}" alt="books pictures">
                     <div class="py-5">
                         <h4 class="font-semibold text-xl mb-2">Lorem.</h4>
                         <p>
@@ -169,7 +169,7 @@
                 </div>
                 <div
                     class="text-center max-w-350 shadow-lg transition ease-out duration-300 transform hover:-translate-y-4 hover:shadow-xl">
-                    <img class="object-cover" src="{{ asset('assets/img/home/computer.jpg') }}"
+                    <img class="object-cover" src="{{ asset('img/home/computer.jpg') }}"
                         alt="person pointing finger at computer screen">
                     <div class="py-5">
                         <h4 class="font-semibold text-xl mb-2">Lorem.</h4>
@@ -180,7 +180,7 @@
                 </div>
                 <div
                     class="text-center max-w-350 shadow-lg transition ease-out duration-300 transform hover:-translate-y-4 hover:shadow-xl">
-                    <img class="object-cover" src="{{ asset('assets/img/home/hacking.jpg') }}"
+                    <img class="object-cover" src="{{ asset('img/home/hacking.jpg') }}"
                         alt="person working on computer in a meet up">
                     <div class="py-5">
                         <h4 class="font-semibold text-xl mb-2">Lorem.</h4>
@@ -201,7 +201,7 @@
             <div class="flex flex-wrap justify-center gap-4 md:gap-8 lg:gap-12">
                 <div class="max-w-350">
                     <img class="w-40 h-40 object-cover mb-10 rounded-full mx-auto"
-                        src="{{ asset('assets/img/home/testimonial-picture1.jpg') }}" alt="">
+                        src="{{ asset('img/home/testimonial-picture1.jpg') }}" alt="">
                     <div class="text-center">
                         <h4 class="font-semibold text-xl mb-2">Lorem, ipsum.</h4>
                         <p class="mb-4">Lorem ipsum dolor sit amet.</p>
@@ -214,7 +214,7 @@
                 </div>
                 <div class="max-w-350">
                     <img class="w-40 h-40 object-cover mb-10 rounded-full mx-auto"
-                        src="{{ asset('assets/img/home/testimonial-picture2.jpg') }}" alt="">
+                        src="{{ asset('img/home/testimonial-picture2.jpg') }}" alt="">
                     <div class="text-center">
                         <h4 class="font-semibold text-xl mb-2">Lorem, ipsum.</h4>
                         <p class="mb-4">Lorem ipsum dolor sit amet.</p>
@@ -227,7 +227,7 @@
                 </div>
                 <div class="max-w-350">
                     <img class="w-40 h-40 object-cover mb-10 rounded-full mx-auto"
-                        src="{{ asset('assets/img/home/testimonial-picture3.jpg') }}" alt="">
+                        src="{{ asset('img/home/testimonial-picture3.jpg') }}" alt="">
                     <div class="text-center">
                         <h4 class="font-semibold text-xl mb-2">Lorem, ipsum.</h4>
                         <p class="mb-4">Lorem ipsum dolor sit amet.</p>
@@ -240,7 +240,7 @@
                 </div>
                 <div class="max-w-350">
                     <img class="w-40 h-40 object-cover mb-10 rounded-full mx-auto"
-                        src="{{ asset('assets/img/home/testimonial-picture4.jpg') }}" alt="">
+                        src="{{ asset('img/home/testimonial-picture4.jpg') }}" alt="">
                     <div class="text-center">
                         <h4 class="font-semibold text-xl mb-2">Lorem, ipsum.</h4>
                         <p class="mb-4">Lorem ipsum dolor sit amet.</p>
@@ -253,7 +253,7 @@
                 </div>
                 <div class="max-w-350">
                     <img class="w-40 h-40 object-cover mb-10 rounded-full mx-auto"
-                        src="{{ asset('assets/img/home/testimonial-picture5.jpg') }}" alt="">
+                        src="{{ asset('img/home/testimonial-picture5.jpg') }}" alt="">
                     <div class="text-center">
                         <h4 class="font-semibold text-xl mb-2">Lorem, ipsum.</h4>
                         <p class="mb-4">Lorem ipsum dolor sit amet.</p>
@@ -266,7 +266,7 @@
                 </div>
                 <div class="max-w-350">
                     <img class="w-40 h-40 object-cover mb-10 rounded-full mx-auto"
-                        src="{{ asset('assets/img/home/testimonial-picture6.jpg') }}" alt="">
+                        src="{{ asset('img/home/testimonial-picture6.jpg') }}" alt="">
                     <div class="text-center">
                         <h4 class="font-semibold text-xl mb-2">Lorem, ipsum.</h4>
                         <p class="mb-4">Lorem ipsum dolor sit amet.</p>

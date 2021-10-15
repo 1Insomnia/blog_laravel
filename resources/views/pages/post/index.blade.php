@@ -1,19 +1,15 @@
 @extends('layouts.default')
 @section('title', 'Blog Posts')
-
 @section('content')
-    <x-modal.modal-post-delete>
-        <x-slot name="title">Confirm Delete</x-slot>
-        Do you want to delete this post ?
-    </x-modal.modal-post-delete>
     <section id="blogPosts">
         <div class="px-6 py-8">
             <div class="container">
                 <div class="flex justify-between">
+                    <h1 class="hidden">Blog Post</h1>
                     <div class="w-full lg:w-8/12">
-                        <h1 class="heading-1 mb-4">
+                        <h2 class="heading-1 mb-4">
                             Latest
-                        </h1>
+                        </h2>
                         {{-- Only show create post/category for admin --}}
                         @can('admin')
                             <div class="pt-8 mb-12">
@@ -66,9 +62,8 @@
                     </div>
                     <div class="hidden w-4/12 lg:block">
                         <div class="px-8 mx-auto max-w-sm">
-                            <h1 class="heading-1 mb-4">Categories</h1>
+                            <h2 class="heading-1 mb-4">Categories</h2>
                             <div class="pt-8 mb-12">
-                                {{-- Create New Category Link --}}
                                 <a class="btn-success" href="{{ route('category.create') }}">
                                     Create Category
                                 </a>
@@ -90,4 +85,8 @@
                 </div>
             </div>
     </section>
+    <x-modal.modal-post-delete>
+        <x-slot name="title">Confirm Delete</x-slot>
+        Do you want to delete this post ?
+    </x-modal.modal-post-delete>
 @endsection

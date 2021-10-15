@@ -1850,6 +1850,10 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 var get = function get(element) {
   return document.querySelector(element);
+};
+
+var getAll = function getAll(element) {
+  return document.querySelectorAll(element);
 }; // Burger Menu : Mobile - Tablet
 
 
@@ -1871,20 +1875,22 @@ window.addEventListener("resize", function () {
   }
 }); // Modal
 
-var deletePostBtn = get("#deletePostBtn");
+var deletePostBtn = getAll("#deletePostBtn");
 var modalWrapper = get("#modalWrapper");
 var modal = get("#modal");
 var modalBtnCancel = get("#modalBtnCancel");
 var modalBtnConfirm = get("#modalBtnConfirm");
 var formDeletePost = get("#formDeletePost");
 
-if (deletePostBtn) {
+if (deletePostBtn && modalWrapper) {
   var slug = "";
   var token = get('meta[name="csrf-token"]').content;
-  deletePostBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-    slug = e.target.dataset.slug;
-    modalWrapper.classList.toggle("modal-disabled");
+  deletePostBtn.forEach(function (button) {
+    button.addEventListener("click", function (e) {
+      e.preventDefault();
+      slug = e.target.dataset.slug;
+      modalWrapper.classList.toggle("modal-disabled");
+    });
   });
   modalWrapper.addEventListener("click", function (e) {
     modalWrapper.classList.add("modal-disabled");
@@ -1898,8 +1904,7 @@ if (deletePostBtn) {
     modalWrapper.classList.add("modal-disabled");
   });
   modalBtnConfirm.addEventListener("click", function (e) {
-    console.log(token);
-    axios__WEBPACK_IMPORTED_MODULE_0___default()["delete"]("/blog/" + slug, {
+    axios__WEBPACK_IMPORTED_MODULE_0___default()["delete"]("/blog/post/" + slug, {
       headers: {
         "X-CSRF-TOKEN": token
       }

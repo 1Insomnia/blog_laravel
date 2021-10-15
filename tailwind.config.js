@@ -101,7 +101,7 @@ module.exports = {
             },
             backgroundImage: {
                 "hero-pattern":
-                    "linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url('/assets/img/home/hero.jpg')",
+                    "linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url('/img/home/hero.jpg')",
             },
         },
     },

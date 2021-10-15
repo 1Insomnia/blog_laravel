@@ -4,7 +4,7 @@
         {{-- Left Container --}}
         <div class="">
             <a class="text-accent block font-bold" href="{{ route('home') }}">
-                <img class="h-6" src="{{ asset('assets/logo.png') }}" alt="Nux Blog Logo">
+                <img class="h-6" src="{{ asset('img/logo.png') }}" alt="Nux Blog Logo">
             </a>
         </div>
 
