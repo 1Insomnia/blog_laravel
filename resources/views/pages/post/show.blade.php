@@ -17,7 +17,12 @@
                     &nbsp; — &nbsp;
                     <span class="block" class="text-primary">#{{ $post->category->name }}</span>
                 </div>
-
+                @if ($post->image_path)
+                    <div class="mt-5">
+                        <img class="block object-cover w-full h-72 mb-5" src="{{ asset('img/' . $post->image_path) }}"
+                            alt="">
+                    </div>
+                @endif
                 {{-- Post Body --}}
                 <div class="mt-5 post-body">
                     {!! $post->displayBody() !!}

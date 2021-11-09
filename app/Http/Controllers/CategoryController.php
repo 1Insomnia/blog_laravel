@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -48,7 +49,8 @@ class CategoryController extends Controller
         ]);
 
         $category_create = Category::create([
-            'name' => $request->name
+            'name' => $request->name,
+            'slug' => Str::slug($request->name, '-')
         ]);
 
         if ($category_create) {
@@ -64,9 +66,9 @@ class CategoryController extends Controller
      * @param  string  $name
      * @return \Illuminate\Http\Response
      */
-    public function show( string $name)
+    public function show(string $slug)
     {
-        $category = Category::where('name', $name)->first();
+        $category = Category::where('name', $slug)->first();
 
         return view('pages.category.show')
             ->with([
@@ -95,16 +97,17 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, int $id)
+    public function update(Request $request, int $slug)
     {
         $request->validate([
             'name' => 'required|string|max:255'
         ]);
 
-        $category = Category::find($id);
+        $category = Category::where('slug', $slug)->get();
 
         $category_update = $category->update([
-            'name' => $request->name
+            'name' => $request->name,
+            'slug' => Str::slug($request->name, '-')
         ]);
 
         if ($category_update) {

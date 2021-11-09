@@ -10,24 +10,6 @@
                         <h2 class="heading-1 mb-4">
                             Latest
                         </h2>
-                        {{-- Only show create post/category for admin --}}
-                        @can('admin')
-                            <div class="pt-8 mb-12">
-                                {{-- Create New Post Link --}}
-                                <a class="btn-success" href="{{ route('post.create') }}">
-                                    Create Post
-                                </a>
-                            </div>
-                        @endcan
-
-                        @if (session('message'))
-                            <div class="py-4 text-red-600">
-                                <h3>
-                                    {{ session('message') }}
-                                </h3>
-                            </div>
-                        @endif
-
                         {{-- Blog Post --}}
                         @foreach ($posts as $post)
                             <x-blog.post :post="$post"></x-blog.post>
@@ -63,17 +45,12 @@
                     <div class="hidden w-4/12 lg:block">
                         <div class="px-8 mx-auto max-w-sm">
                             <h2 class="heading-1 mb-4">Categories</h2>
-                            <div class="pt-8 mb-12">
-                                <a class="btn-success" href="{{ route('category.create') }}">
-                                    Create Category
-                                </a>
-                            </div>
                             <div class="flex flex-col px-4 py-6 bg-white rounded-lg shadow-md">
                                 <ul>
                                     @foreach ($categories as $category)
                                         <li>
-                                            <a href="#"
-                                                class="underline text-success transition duration-200 ease-linear hover:text-success-light">
+                                            <a class="ml-4 heading-4 block text-accent-6 transition duration-200 ease-linear hover:text-success-light"
+                                                href="{{ route('category.show', $category->slug) }}">
                                                 # {{ $category->name }}
                                             </a>
                                         </li>
@@ -85,8 +62,4 @@
                 </div>
             </div>
     </section>
-    <x-modal.modal-post-delete>
-        <x-slot name="title">Confirm Delete</x-slot>
-        Do you want to delete this post ?
-    </x-modal.modal-post-delete>
 @endsection

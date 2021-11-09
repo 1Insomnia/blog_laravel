@@ -3,15 +3,13 @@
      <div>
          @if ($post->image_path)
              <img class="block object-cover w-full h-52 mb-5" src="{{ asset('img/' . $post->image_path) }}" alt="">
-         @else
-             <img class="block object-cover w-full h-52 mb-5" src="https://source.unsplash.com/random" alt="">
          @endif
      </div>
      <article class="flex flex-col justify-between flex-1">
          <div>
              {{-- Post Title --}}
              <div class="flex items-center mb-6">
-                 <h2 class="heading-2">
+                 <h2 class="heading-2 leading-none">
                      {{ $post->title }}
                  </h2>
                  <a class="ml-4 heading-4 block text-accent-6 transition duration-200 ease-linear hover:text-success-light"
@@ -38,17 +36,5 @@
              </a>
              <span class="">{{ $post->publishedAt() }}</span>
          </div>
-         @can('admin')
-             <div class="mt-8 ml-auto">
-                 <button class="btn-warning">
-                     <a href="{{ route('post.edit', $post->slug) }}">
-                         Update Post
-                     </a>
-                 </button>
-                 <button class="btn-error" id="deletePostBtn" data-slug="{{ $post->slug }}">
-                     Delete Post
-                 </button>
-             </div>
-         @endcan
      </article>
  </div>
